@@ -6,8 +6,9 @@ name: Publish
 on:
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Publish the latest package to crates.io'
+       version:
+          description: 'New version'     
+          required: true        
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,6 +20,10 @@ jobs:
         with:
            toolchain: stable
            override: true
+      - name: Install Tag Generator
+        run: cargo install cargo-v
+      - name: Generate Tag
+        run: cargo v ${{ github.event.inputs.version }} -y
       - uses: katyo/publish-crates@v1
         with:
           registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
