@@ -1,6 +1,6 @@
 # Struct From Avro
 
-![Build Status](https://github.com/leonardogolfeto/schema-from-avro/actions/workflows/rust.yml/badge.svg)
+![Test Status](https://github.com/leonardogolfeto/schema-from-avro/actions/workflows/test.yml/badge.svg) ![Buld Status](https://github.com/leonardogolfeto/schema-from-avro/actions/workflows/build.yml/badge.svg)
 
 
 Schema from avro is a project that aims to speed up the development process for rust systems that use avro schema, removing the need to manually map a schema to a struct, thus mitigating probable errors at development time.
