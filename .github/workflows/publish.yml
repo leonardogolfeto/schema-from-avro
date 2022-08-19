@@ -1,0 +1,19 @@
+# This is a basic workflow that is manually triggered
+
+name: Publish
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Publish the latest package to crates.io'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: katyo/publish-crates@v1
+      with:
+          registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
