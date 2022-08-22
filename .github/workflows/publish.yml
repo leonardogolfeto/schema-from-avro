@@ -22,8 +22,10 @@ jobs:
            override: true
       - name: Install Tag Generator
         run: cargo install cargo-v
-      - name: Generate Tag
+      - name: Generate Version
         run: cargo v ${{ github.event.inputs.version }} -y
+      - name: Gemerate Tag
+        run: git tag v${{ github.event.inputs.version }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "[Bot] Creating Tag" 
