@@ -1,6 +1,6 @@
 [package]
 name = "struct-from-avro"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description= "Generate structs from avro schemas, you can specify the path of your avsc file on the program arguments"
 license = "MIT"
